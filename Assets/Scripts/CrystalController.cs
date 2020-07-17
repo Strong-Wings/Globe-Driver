@@ -9,7 +9,7 @@ public class CrystalController : MonoBehaviour
     public float SpeedRotate;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,10 @@ public class CrystalController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) {
             Destroy(this.gameObject);
+            LevelGenerator.gemAmount -= 1;
+            PlayerController.gemAmount += 1;
+        }
     }
 }

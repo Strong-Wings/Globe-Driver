@@ -16,8 +16,8 @@ public class Sphere : MonoBehaviour
         float y = Input.GetAxis("Horizontal");
         float x = Input.GetAxis("Vertical");
 
-        transform.RotateAround(Vector3.up, y*Time.deltaTime);
-        transform.RotateAround(Vector3.left, x*Time.deltaTime);
+        transform.Rotate(Vector3.up, y*Time.deltaTime);
+        transform.Rotate(Vector3.left, x*Time.deltaTime);
 
     }
     

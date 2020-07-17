@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 485752834}
   - component: {fileID: 485752839}
   - component: {fileID: 485752838}
+  - component: {fileID: 485752840}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Globe
@@ -734,6 +735,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &485752840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485752833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cd3a473dc920146ad0c4b068ada6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 819314664772206385, guid: e102219b77692384fa6e74168ec30eec, type: 3}
+  Gem: {fileID: 1389066971}
+  objects:
+  - {fileID: 4408842568170118341, guid: 75fb6594f51c37c44b999e7bc9fac920, type: 3}
+  - {fileID: 3789977618876050510, guid: 86e50dfd7676fd043bf0b11a59ba5c50, type: 3}
+  - {fileID: 4650165777243259396, guid: abfbaa4970a8fbe4faf30afb4d71aecd, type: 3}
 --- !u!1001 &526175539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1507,7 +1526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &860232939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2287,6 +2306,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235824768}
   m_CullTransparentMesh: 0
+--- !u!1 &1389066971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5253389718632898542, guid: 53e290f66e573e4419c8710962727b61,
+    type: 3}
+  m_PrefabInstance: {fileID: 3686162734964244505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1403906125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7e3ed52b59b21dc49a041acadcdc6fce,
@@ -2515,7 +2540,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546073961}
-  - component: {fileID: 1546073962}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -2540,23 +2564,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1546073962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546073960}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cd3a473dc920146ad0c4b068ada6cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 819314664772206385, guid: e102219b77692384fa6e74168ec30eec, type: 3}
-  objects:
-  - {fileID: 4408842568170118341, guid: 75fb6594f51c37c44b999e7bc9fac920, type: 3}
-  - {fileID: 3789977618876050510, guid: 86e50dfd7676fd043bf0b11a59ba5c50, type: 3}
-  - {fileID: 4650165777243259396, guid: abfbaa4970a8fbe4faf30afb4d71aecd, type: 3}
 --- !u!1 &1556123216
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,6 +3441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamondo5side
       objectReference: {fileID: 0}
+    - target: {fileID: 5253389718632898542, guid: 53e290f66e573e4419c8710962727b61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5254137676501224494, guid: 53e290f66e573e4419c8710962727b61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3509,5 +3521,10 @@ PrefabInstance:
       propertyPath: SpeedRotate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8618845267199558830, guid: 53e290f66e573e4419c8710962727b61,
+        type: 3}
+      propertyPath: gemsAmount
+      value: 
+      objectReference: {fileID: 1626591216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e290f66e573e4419c8710962727b61, type: 3}
