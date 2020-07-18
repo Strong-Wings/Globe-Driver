@@ -23,7 +23,7 @@ public class CrystalController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) {
             Destroy(this.gameObject);
-            LevelGenerator.gemAmount -= 1;
+            CrystalSpawner.gemAmount -= 1;
             PlayerController.gemAmount += 1;
         }
     }

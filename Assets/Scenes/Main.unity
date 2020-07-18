@@ -614,6 +614,8 @@ GameObject:
   - component: {fileID: 485752839}
   - component: {fileID: 485752838}
   - component: {fileID: 485752840}
+  - component: {fileID: 485752841}
+  - component: {fileID: 485752842}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Globe
@@ -747,12 +749,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cd3a473dc920146ad0c4b068ada6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroid: {fileID: 819314664772206385, guid: e102219b77692384fa6e74168ec30eec, type: 3}
-  Gem: {fileID: 1389066971}
   objects:
   - {fileID: 4408842568170118341, guid: 75fb6594f51c37c44b999e7bc9fac920, type: 3}
   - {fileID: 3789977618876050510, guid: 86e50dfd7676fd043bf0b11a59ba5c50, type: 3}
   - {fileID: 4650165777243259396, guid: abfbaa4970a8fbe4faf30afb4d71aecd, type: 3}
+--- !u!114 &485752841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485752833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa8011fa2af7824fb8676d201c4eb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gem: {fileID: 1389066971}
+--- !u!114 &485752842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485752833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7f1a9f86de25f41b0f7e51299c7252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 819314664772206385, guid: e102219b77692384fa6e74168ec30eec, type: 3}
 --- !u!1001 &526175539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2457,6 +2483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 10
+  gemsAmountField: {fileID: 0}
 --- !u!1 &1474805659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,7 +2569,7 @@ GameObject:
   - component: {fileID: 1546073961}
   m_Layer: 0
   m_Name: Globe
-  m_TagString: Untagged
+  m_TagString: Globe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2705,7 +2732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &1626591219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2995,6 +3022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.2
   rotationSpeed: 80
+  gemsAmountField: {fileID: 1626591216}
 --- !u!114 &1786539212
 MonoBehaviour:
   m_ObjectHideFlags: 0
