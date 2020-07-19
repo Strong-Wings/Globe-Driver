@@ -10,8 +10,15 @@ public class UIManager : MonoBehaviour
     public GameObject cam;
     public GameObject[] menuObjects;
     public GameObject[] gameObjects;
-
+    public GameObject Globe;
+    public GameObject Car;
     private float t = 0;
+
+    private void Start()
+    {
+        Globe.GetComponent<CrystalSpawner>().enabled = false;
+        Globe.GetComponent<MeteorSpawner>().enabled = false;
+    }
 
     public void StartPlay()
     {
@@ -20,6 +27,9 @@ public class UIManager : MonoBehaviour
             menuObjects[i].SetActive(false);
         for (int i = 0; i < gameObjects.Length; i++)
             gameObjects[i].SetActive(true);
+        Globe.GetComponent<CrystalSpawner>().enabled = true;
+        Globe.GetComponent<MeteorSpawner>().enabled = true;
+        Car.GetComponent<PlayerController>().StartGame = true;
     }
     public void SoundTurn()
     {
