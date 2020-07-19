@@ -13,26 +13,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     public GameObject gemsAmountField;
     private UnityEngine.UI.Text textField;
-    public bool StartGame;
+    public static bool StartGame;
 
     private void Start()
     {
         textField = gemsAmountField.GetComponent<UnityEngine.UI.Text>();
         _rb = GetComponent<Rigidbody>();
-        
-        if (!System.IO.File.Exists(Application.persistentDataPath + "/balance.gd"))
-        {
-            StreamWriter balancedataW = new StreamWriter (Application.persistentDataPath + "/balance.gd");
-            gemAmount = 0;
-            balancedataW.Write(0);
-            balancedataW.Close();
-        }
-        else 
-        {
-            StreamReader balancedata = new StreamReader (Application.persistentDataPath + "/balance.gd");
-            gemAmount = int.Parse(balancedata.ReadLine());
-            balancedata.Close();
-        }
     }
 
     private void Update()
