@@ -31,13 +31,11 @@ public class ShopController : MonoBehaviour
         for (int i = 0; i < cars.Length; i++)
         {
             cars[i] = Instantiate(carInfo[i].model, carsPanel.transform);
-            cars[i].transform.localScale /= 2f;
-            cars[i].transform.localPosition = new Vector3(offset * i, 0, -1000);
+            cars[i].transform.localScale = carInfo[i].model.transform.localScale;
+            cars[i].transform.localPosition = carInfo[i].model.transform.localPosition + Vector3.right * i * offset;
+            cars[i].transform.localRotation = carInfo[i].model.transform.localRotation;
         }
-        if (PlayerPrefs.HasKey("CurrentCar"))
-            _curCar = PlayerPrefs.GetInt("CurrentCar");
-        else
-            _curCar = 0;
+        _curCar = 0;
         carsPanel.transform.localPosition = new Vector3(-cars[_curCar].transform.localPosition.x, 0, 0);
         ChangeButton();
     }
@@ -49,7 +47,7 @@ public class ShopController : MonoBehaviour
     {
         if (_turning || _curCar == cars.Length-1) return;
         _turning = true;
-        cars[_curCar].transform.localRotation = Quaternion.Euler(Vector3.zero);
+        cars[_curCar].transform.localRotation = carInfo[_curCar].model.transform.localRotation;
         _curCar++;
         StartCoroutine(TransitionNext(cars[_curCar].transform.localPosition));
     }
@@ -57,7 +55,7 @@ public class ShopController : MonoBehaviour
     {
         if (_turning || _curCar == 0) return;
         _turning = true;
-        cars[_curCar].transform.localRotation = Quaternion.Euler(Vector3.zero);
+        cars[_curCar].transform.localRotation = carInfo[_curCar].model.transform.localRotation;
         _curCar--;
         StartCoroutine(TransitionPrev(cars[_curCar].transform.localPosition));
     }

@@ -833,7 +833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &478601019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,23 +932,11 @@ MonoBehaviour:
   offset: 190
   carRotationSpeed: 80
   carInfo:
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
+  - model: {fileID: 8278298903812171022, guid: 95a006beba7eb614b8c02c75bd430edf, type: 3}
     cost: 0
     bought: 1
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
+  - model: {fileID: 1106417060722570727, guid: 058a90fd14db7eb488ab7689c3fe542a, type: 3}
     cost: 150
-    bought: 0
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
-    cost: 200
-    bought: 0
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
-    cost: 500
-    bought: 0
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
-    cost: 1000
-    bought: 0
-  - model: {fileID: 1586702691628044531, guid: df1fdf5d4ad26b543be04db0a352cd69, type: 3}
-    cost: 10000
     bought: 0
 --- !u!1 &485752833
 GameObject:
@@ -1106,6 +1094,7 @@ MonoBehaviour:
   - {fileID: 4408842568170118341, guid: 75fb6594f51c37c44b999e7bc9fac920, type: 3}
   - {fileID: 3789977618876050510, guid: 86e50dfd7676fd043bf0b11a59ba5c50, type: 3}
   - {fileID: 4650165777243259396, guid: abfbaa4970a8fbe4faf30afb4d71aecd, type: 3}
+  Tree: {fileID: 0}
 --- !u!114 &485752841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2340,7 +2329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &860232939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3279,12 +3268,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235824768}
   m_CullTransparentMesh: 0
---- !u!1 &1389066971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5253389718632898542, guid: 53e290f66e573e4419c8710962727b61,
-    type: 3}
-  m_PrefabInstance: {fileID: 3686162734964244505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1314090319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,6 +3342,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314090319}
   m_CullTransparentMesh: 0
+--- !u!1 &1389066971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5253389718632898542, guid: 53e290f66e573e4419c8710962727b61,
+    type: 3}
+  m_PrefabInstance: {fileID: 3686162734964244505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1446027631
 GameObject:
   m_ObjectHideFlags: 0
