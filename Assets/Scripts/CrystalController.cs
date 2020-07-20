@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CrystalController : MonoBehaviour
@@ -9,7 +9,7 @@ public class CrystalController : MonoBehaviour
     public float SpeedRotate;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,10 @@ public class CrystalController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) {
             Destroy(this.gameObject);
+            CrystalSpawner.gemAmount -= 1;
+            PlayerController.gemAmount += 1;
+        }
     }
 }

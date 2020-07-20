@@ -22,5 +22,11 @@ public class MeteorController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Player Destroyed");
+        }
     }
 }

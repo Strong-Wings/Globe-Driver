@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using System.IO;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,8 +12,31 @@ public class UIManager : MonoBehaviour
     public GameObject ShopCanvas;
     public GameObject[] menuObjects;
     public GameObject[] gameObjects;
-
+    public GameObject gemsAmountField;
+    public GameObject Globe;
+    private UnityEngine.UI.Text textField;
     private float t = 0;
+
+    private void Start()
+    {
+        textField = gemsAmountField.GetComponent<UnityEngine.UI.Text>();
+        Globe.GetComponent<CrystalSpawner>().enabled = false;
+        Globe.GetComponent<MeteorSpawner>().enabled = false;
+        if (!System.IO.File.Exists(Application.persistentDataPath + "/balance.gd"))
+        {
+            StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/balance.gd");
+            PlayerController.gemAmount = 0;
+            balancedataW.Write(0);
+            balancedataW.Close();
+        }
+        else
+        {
+            StreamReader balancedata = new StreamReader(Application.persistentDataPath + "/balance.gd");
+            PlayerController.gemAmount = int.Parse(balancedata.ReadLine());
+            balancedata.Close();
+        }
+        textField.text = PlayerController.gemAmount.ToString();
+    }
 
     public void StartPlay()
     {
@@ -21,6 +45,9 @@ public class UIManager : MonoBehaviour
             menuObjects[i].SetActive(false);
         for (int i = 0; i < gameObjects.Length; i++)
             gameObjects[i].SetActive(true);
+        Globe.GetComponent<CrystalSpawner>().enabled = true;
+        Globe.GetComponent<MeteorSpawner>().enabled = true;
+        PlayerController.StartGame = true;
     }
     public void SoundTurn()
     {
