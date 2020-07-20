@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [HideInInspector]
     public bool sound = true;
     public GameObject cam;
+    public GameObject ShopCanvas;
     public GameObject[] menuObjects;
     public GameObject[] gameObjects;
 
@@ -25,9 +26,9 @@ public class UIManager : MonoBehaviour
     {
         sound = !sound;
     }
-    public void ShowShop()
+    public void ShowShop(bool show)
     {
-        Debug.Log("Shop");
+        ShopCanvas.SetActive(show);
     }
 
     private IEnumerator CamToGlobe()
