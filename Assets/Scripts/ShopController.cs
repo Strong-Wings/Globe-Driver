@@ -2,6 +2,8 @@
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using System.IO;
+using System.Linq;
 
 [Serializable]
 public class Car
@@ -38,6 +40,7 @@ public class ShopController : MonoBehaviour
         _curCar = 0;
         carsPanel.transform.localPosition = new Vector3(-cars[_curCar].transform.localPosition.x, 0, 0);
         ChangeButton();
+        GetBoughtCars();
     }
     private void Update()
     {
@@ -103,11 +106,35 @@ public class ShopController : MonoBehaviour
         }
         else
         {
-            if (true)
+            if (PlayerController.gemAmount >= carInfo[_curCar].cost)
             {
+                StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/balance.gd");
+                balancedataW.Write(PlayerController.gemAmount - carInfo[_curCar].cost);
+                balancedataW.Close();
+
                 carInfo[_curCar].bought = true;
                 ChangeButton();
             }
+        }
+    }
+    private void GetBoughtCars() {    
+        if (!System.IO.File.Exists(Application.persistentDataPath + "/boughtCars.gd")) 
+        {
+            StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/boughtCars.gd");
+            PlayerController.gemAmount = 0;
+            balancedataW.Write("1" + String.Concat(Enumerable.Repeat("0", cars.Length - 1)));
+            balancedataW.Close();
+        }
+        StreamReader boughtCarsData = new StreamReader(Application.persistentDataPath + "/boughtCars.gd");
+        string boughtCars = boughtCarsData.ReadLine();
+        boughtCarsData.Close();
+
+        for (int i = 0; i < cars.Length; i++)
+        {
+            if (boughtCars[i] == '1')
+                carInfo[i].bought = true;
+            else 
+                carInfo[i].bought = false;
         }
     }
 }
