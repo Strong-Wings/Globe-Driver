@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [HideInInspector]
     public bool sound = true;
+    public float menuBarSpeed = 500f;
     public GameObject cam;
     public GameObject ShopCanvas;
     public GameObject[] menuObjects;
     public GameObject[] gameObjects;
     public GameObject gemsAmountField;
     public GameObject Globe;
+
     private UnityEngine.UI.Text textField;
-    private float t = 0;
+    private float t = 0, _tmp = 0, _endOfBar = 270f;
+    private bool _menuBarOpen = false, _barOpening = false;
 
     private void Start()
     {
@@ -25,7 +29,6 @@ public class UIManager : MonoBehaviour
         if (!System.IO.File.Exists(Application.persistentDataPath + "/balance.gd"))
         {
             StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/balance.gd");
-            PlayerController.gemAmount = 0;
             balancedataW.Write(0);
             balancedataW.Close();
         }
@@ -57,7 +60,49 @@ public class UIManager : MonoBehaviour
     {
         ShopCanvas.SetActive(show);
     }
-
+    public void MenuButton(GameObject MenuBar)
+    {
+        if (_barOpening) return;
+        _barOpening = true;
+        MenuBar.transform.GetChild(3).gameObject.SetActive(_menuBarOpen);
+        MenuBar.transform.GetChild(4).gameObject.SetActive(!_menuBarOpen);
+        MenuBar.transform.GetChild(5).gameObject.SetActive(!_menuBarOpen);
+        MenuBar.transform.GetChild(6).gameObject.SetActive(!_menuBarOpen);
+        if (!_menuBarOpen)
+        {
+            StartCoroutine(MenuBarTransition(MenuBar.transform.GetChild(1).GetComponent<RectTransform>(), MenuBar.transform.GetChild(2).GetComponent<RectTransform>()));
+        }
+        else
+        {
+            StartCoroutine(MenuBarTransitionBack(MenuBar.transform.GetChild(1).GetComponent<RectTransform>(), MenuBar.transform.GetChild(2).GetComponent<RectTransform>()));
+        }
+    }
+    private IEnumerator MenuBarTransition(RectTransform panel, RectTransform rightCircle)
+    {
+        while(panel.sizeDelta.x + Time.deltaTime * menuBarSpeed <= _endOfBar)
+        {
+            panel.sizeDelta += Vector2.right * Time.deltaTime * menuBarSpeed;
+            rightCircle.anchoredPosition += Vector2.right * Time.deltaTime * menuBarSpeed;
+            yield return null;
+        }
+        panel.sizeDelta = new Vector2(_endOfBar, panel.sizeDelta.y);
+        rightCircle.anchoredPosition = new Vector2(43f + _endOfBar, 0f);
+        _menuBarOpen = true;
+        _barOpening = false;
+    }
+    private IEnumerator MenuBarTransitionBack(RectTransform panel, RectTransform rightCircle)
+    {
+        while (panel.sizeDelta.x - Time.deltaTime* menuBarSpeed >= 0)
+        {
+            panel.sizeDelta -= Vector2.right * Time.deltaTime * menuBarSpeed;
+            rightCircle.anchoredPosition -= Vector2.right * Time.deltaTime * menuBarSpeed;
+            yield return null;
+        }
+        panel.sizeDelta = new Vector2(0, panel.sizeDelta.y);
+        rightCircle.anchoredPosition = new Vector2(43f, 0f);
+        _menuBarOpen = false;
+        _barOpening = false;
+    }
     private IEnumerator CamToGlobe()
     {
         while(cam.transform.localPosition.z < -3 || cam.transform.localPosition.y > 6)

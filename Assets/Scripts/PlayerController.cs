@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
             Quaternion deltaRotation = Quaternion.Euler(yRotation);
             Quaternion targetRotation = _rb.rotation * deltaRotation;
             _rb.MoveRotation(Quaternion.Slerp(_rb.rotation, targetRotation, 50f * Time.deltaTime));
+            
         }
     }
 
