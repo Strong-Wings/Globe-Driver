@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour
     {
         setCurCar();
         rotation = Input.GetAxisRaw("Horizontal");   //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
-        /*        if (Input.acceleration.x < -0.1f)
-                    rotation = -1;
-                else if (Input.acceleration.x > 0.1f)        //РАСКОММЕНТИТЬ ПРИ БИЛДЕ
-                    rotation = 1;
-                else
-                    rotation = 0;*/
+/*        if (Input.acceleration.x < -0.1f)
+            rotation = Mathf.Max(5 * Input.acceleration.x, -2.0f);
+        else if (Input.acceleration.x > 0.1f)        //РАСКОММЕНТИТЬ ПРИ БИЛДЕ
+            rotation = Mathf.Min(2.0f, 5 * Input.acceleration.x);
+        else
+            rotation = 0;*/
         if (StartGame)
         {
             textField.text = gemAmount.ToString();

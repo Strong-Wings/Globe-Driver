@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     {
         textField = gemsAmountField.GetComponent<UnityEngine.UI.Text>();
         Globe.GetComponent<CrystalSpawner>().enabled = false;
-        Globe.GetComponent<MeteorSpawner>().enabled = false;
+       // Globe.GetComponent<MeteorSpawner>().enabled = false;
         if (!System.IO.File.Exists(Application.persistentDataPath + "/balance.gd"))
         {
             StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/balance.gd");
@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < gameObjects.Length; i++)
             gameObjects[i].SetActive(true);
         Globe.GetComponent<CrystalSpawner>().enabled = true;
-        Globe.GetComponent<MeteorSpawner>().enabled = true;
+        //Globe.GetComponent<MeteorSpawner>().enabled = true;
         PlayerController.StartGame = true;
     }
     public void SoundTurn()
