@@ -39,8 +39,8 @@ public class ShopController : MonoBehaviour
         }
         _curCar = 0;
         carsPanel.transform.localPosition = new Vector3(-cars[_curCar].transform.localPosition.x, 0, 0);
-        ChangeButton();
         GetBoughtCars();
+        ChangeButton();
     }
     private void Update()
     {
@@ -102,6 +102,9 @@ public class ShopController : MonoBehaviour
     {
         if (carInfo[_curCar].bought)
         {
+            StreamWriter carData = new StreamWriter(Application.persistentDataPath + "/curCar.gd");
+            carData.Write(_curCar);
+            carData.Close();
             gameObject.SetActive(false);
         }
         else
@@ -111,8 +114,21 @@ public class ShopController : MonoBehaviour
                 StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/balance.gd");
                 balancedataW.Write(PlayerController.gemAmount - carInfo[_curCar].cost);
                 balancedataW.Close();
+                PlayerController.gemAmount -= carInfo[_curCar].cost;
+                PlayerController.textField.text = PlayerController.gemAmount.ToString();
+                StreamReader boughtCarsData = new StreamReader(Application.persistentDataPath + "/boughtCars.gd");
+                string boughtCars = boughtCarsData.ReadLine();
+                boughtCarsData.Close();
 
                 carInfo[_curCar].bought = true;
+                char[] ch = boughtCars.ToCharArray();
+                ch[_curCar] = '1'; // index starts at 0!
+                string newBoughtCars = new string (ch);
+                
+                StreamWriter wData = new StreamWriter(Application.persistentDataPath + "/boughtCars.gd");
+                wData.Write(newBoughtCars);
+                wData.Close();
+                
                 ChangeButton();
             }
         }
@@ -121,7 +137,6 @@ public class ShopController : MonoBehaviour
         if (!System.IO.File.Exists(Application.persistentDataPath + "/boughtCars.gd")) 
         {
             StreamWriter balancedataW = new StreamWriter(Application.persistentDataPath + "/boughtCars.gd");
-            PlayerController.gemAmount = 0;
             balancedataW.Write("1" + String.Concat(Enumerable.Repeat("0", cars.Length - 1)));
             balancedataW.Close();
         }

@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
         }
         textField.text = PlayerController.gemAmount.ToString();
     }
-
     public void StartPlay()
     {
         StartCoroutine(CamToGlobe());
