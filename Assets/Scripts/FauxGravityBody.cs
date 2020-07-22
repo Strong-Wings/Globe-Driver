@@ -11,10 +11,8 @@ public class FauxGravityBody : MonoBehaviour {
 	{
 		_rb = GetComponent<Rigidbody>();
 	}
-
 	void FixedUpdate()
 	{
 		attractor.Attract(_rb);
 	}
-
 }

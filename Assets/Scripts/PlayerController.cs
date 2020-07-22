@@ -10,11 +10,12 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 10f;
     public static int gemAmount;
     private float rotation;
-    private Rigidbody _rb;
     public GameObject gemsAmountField;
+    public GameObject[] otherCars;
     public static UnityEngine.UI.Text textField;
     public static bool StartGame;
-    public GameObject[] otherCars;
+
+    private Rigidbody _rb;
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (StartGame && !UIManager.pause)
         {
-            if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
+            //if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
                 _rb.MovePosition(_rb.position + transform.forward * moveSpeed * Time.fixedDeltaTime); //УБРАТЬ ОТСТУП ПРИ БИЛДЕ
             Vector3 yRotation = Vector3.up * rotation * rotationSpeed * Time.fixedDeltaTime;
             Quaternion deltaRotation = Quaternion.Euler(yRotation);
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
             
         }
     }
-
+    
     private void setCurCar() {
         if (!System.IO.File.Exists(Application.persistentDataPath + "/curCar.gd")) {
             StreamWriter carData = new StreamWriter(Application.persistentDataPath + "/curCar.gd");
