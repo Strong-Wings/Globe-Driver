@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5229095648569057252}
   - component: {fileID: 5239359820068049468}
   - component: {fileID: 8618845267199558830}
-  - component: {fileID: -3095916791399038730}
+  - component: {fileID: 4094048634756042836}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -94,17 +94,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedRotate: 15
---- !u!64 &-3095916791399038730
-MeshCollider:
+--- !u!135 &4094048634756042836
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253389718632898542}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6217dd83a11a7df46b82193c138a8ce2, type: 3}
+  serializedVersion: 2
+  m_Radius: 1.6393867
+  m_Center: {x: -0.0000033234735, y: -0.0000026772423, z: -0.49539587}
