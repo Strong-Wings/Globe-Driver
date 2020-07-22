@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     public GameObject Globe;
 
     private UnityEngine.UI.Text textField;
-    private float t = 0, _tmp = 0, _endOfBar = 270f;
+    private float t = 0, _tmp = 0, _endOfBar = 150f;
     private bool _barOpening = false;
 
     private void Start()
@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
         MenuBar.transform.GetChild(3).gameObject.SetActive(pause);
         MenuBar.transform.GetChild(4).gameObject.SetActive(!pause);
         MenuBar.transform.GetChild(5).gameObject.SetActive(!pause);
-        MenuBar.transform.GetChild(6).gameObject.SetActive(!pause);
+        //MenuBar.transform.GetChild(6).gameObject.SetActive(!pause);
         if (!pause)
         {
             StartCoroutine(MenuBarTransition(MenuBar.transform.GetChild(1).GetComponent<RectTransform>(), MenuBar.transform.GetChild(2).GetComponent<RectTransform>()));
