@@ -57,6 +57,8 @@ public class UIManager : MonoBehaviour
     public void SoundTurn()
     {
         sound = !sound;
+        transform.Find("SoundOn").gameObject.SetActive(sound);
+        transform.Find("SoundOff").gameObject.SetActive(!sound);
     }
     public void ShowShop(bool show)
     {

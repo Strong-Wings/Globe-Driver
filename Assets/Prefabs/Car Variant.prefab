@@ -417,11 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4dda151a03bd9d749a4af20d79385d84, type: 2}
+      objectReference: {fileID: 2100000, guid: 344ecf257de48f64fb00b6f475a54fa9, type: 2}
     - target: {fileID: 919132149155446097, guid: df1fdf5d4ad26b543be04db0a352cd69,
         type: 3}
       propertyPath: m_Name
-      value: Car
+      value: Car Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: df1fdf5d4ad26b543be04db0a352cd69,
         type: 3}
