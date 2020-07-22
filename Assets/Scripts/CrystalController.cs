@@ -5,23 +5,19 @@ using UnityEngine;
 
 public class CrystalController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float SpeedRotate;
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public ParticleSystem blast;
+    
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 45) * Time.deltaTime * SpeedRotate);
+        transform.Rotate(Vector3.forward * Time.deltaTime * SpeedRotate);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")) {
+            Destroy(Instantiate(blast.gameObject, transform.position, Quaternion.identity), 2f);
+            GameObject.Find("DiamondCollect").GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);
             CrystalSpawner.gemAmount -= 1;
             PlayerController.gemAmount += 1;
