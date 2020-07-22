@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        setCurCar();
+        if (UIManager.pause) return;
         rotation = Input.GetAxisRaw("Horizontal");   //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
 /*        if (Input.acceleration.x < -0.1f)
             rotation = Mathf.Max(5 * Input.acceleration.x, -2.0f);
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (StartGame)
+        if (StartGame && !UIManager.pause)
         {
             if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
                 _rb.MovePosition(_rb.position + transform.forward * moveSpeed * Time.fixedDeltaTime); //УБРАТЬ ОТСТУП ПРИ БИЛДЕ

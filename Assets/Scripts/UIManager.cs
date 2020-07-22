@@ -4,11 +4,14 @@ using System.Diagnostics.Tracing;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     [HideInInspector]
     public bool sound = true;
+    [HideInInspector]
+    public static bool pause = false;
     public float menuBarSpeed = 500f;
     public GameObject cam;
     public GameObject ShopCanvas;
@@ -19,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     private UnityEngine.UI.Text textField;
     private float t = 0, _tmp = 0, _endOfBar = 270f;
-    private bool _menuBarOpen = false, _barOpening = false;
+    private bool _barOpening = false;
 
     private void Start()
     {
@@ -59,15 +62,25 @@ public class UIManager : MonoBehaviour
     {
         ShopCanvas.SetActive(show);
     }
+    public void GoToHome()
+    {
+        SceneManager.LoadScene("Main");
+        UIManager.pause = false;
+    }
+    public void Restart()
+    {
+        GoToHome();
+        StartPlay();
+    }
     public void MenuButton(GameObject MenuBar)
     {
         if (_barOpening) return;
         _barOpening = true;
-        MenuBar.transform.GetChild(3).gameObject.SetActive(_menuBarOpen);
-        MenuBar.transform.GetChild(4).gameObject.SetActive(!_menuBarOpen);
-        MenuBar.transform.GetChild(5).gameObject.SetActive(!_menuBarOpen);
-        MenuBar.transform.GetChild(6).gameObject.SetActive(!_menuBarOpen);
-        if (!_menuBarOpen)
+        MenuBar.transform.GetChild(3).gameObject.SetActive(pause);
+        MenuBar.transform.GetChild(4).gameObject.SetActive(!pause);
+        MenuBar.transform.GetChild(5).gameObject.SetActive(!pause);
+        MenuBar.transform.GetChild(6).gameObject.SetActive(!pause);
+        if (!pause)
         {
             StartCoroutine(MenuBarTransition(MenuBar.transform.GetChild(1).GetComponent<RectTransform>(), MenuBar.transform.GetChild(2).GetComponent<RectTransform>()));
         }
@@ -86,7 +99,7 @@ public class UIManager : MonoBehaviour
         }
         panel.sizeDelta = new Vector2(_endOfBar, panel.sizeDelta.y);
         rightCircle.anchoredPosition = new Vector2(43f + _endOfBar, 0f);
-        _menuBarOpen = true;
+        pause = true;
         _barOpening = false;
     }
     private IEnumerator MenuBarTransitionBack(RectTransform panel, RectTransform rightCircle)
@@ -99,7 +112,7 @@ public class UIManager : MonoBehaviour
         }
         panel.sizeDelta = new Vector2(0, panel.sizeDelta.y);
         rightCircle.anchoredPosition = new Vector2(43f, 0f);
-        _menuBarOpen = false;
+        pause = false;
         _barOpening = false;
     }
     private IEnumerator CamToGlobe()
