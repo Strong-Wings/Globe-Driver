@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (StartGame && !UIManager.pause)
         {
-            //if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
+            if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
                 _rb.MovePosition(_rb.position + transform.forward * moveSpeed * Time.fixedDeltaTime); //УБРАТЬ ОТСТУП ПРИ БИЛДЕ
             Vector3 yRotation = Vector3.up * rotation * rotationSpeed * Time.fixedDeltaTime;
             Quaternion deltaRotation = Quaternion.Euler(yRotation);
