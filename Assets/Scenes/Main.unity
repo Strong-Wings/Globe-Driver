@@ -3115,11 +3115,6 @@ PrefabInstance:
     - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
         type: 3}
       propertyPath: m_RootOrder
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
@@ -3472,11 +3467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.6792125
-      objectReference: {fileID: 0}
-    - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
         type: 3}
@@ -4762,11 +4752,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.48938248
-      objectReference: {fileID: 0}
-    - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 633801800421951071, guid: 55c005dba039ec54da507b3fec312516,
         type: 3}
@@ -6088,11 +6073,6 @@ PrefabInstance:
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
@@ -7074,11 +7054,6 @@ PrefabInstance:
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
@@ -7898,11 +7873,6 @@ PrefabInstance:
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
         type: 3}
       propertyPath: m_RootOrder
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
@@ -8273,11 +8243,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.6501526
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
         type: 3}
@@ -10202,7 +10167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e97c5241f77efa4392fc944bf1ec502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 1
   menuBarSpeed: 2000
   cam: {fileID: 349613060}
   ShopCanvas: {fileID: 478601018}
@@ -10262,11 +10226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.3839685
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
         type: 3}
@@ -12347,7 +12306,6 @@ Transform:
   - {fileID: 1143890193}
   - {fileID: 1503617076}
   - {fileID: 1386484626}
-  - {fileID: 1799871120}
   - {fileID: 1696825031}
   - {fileID: 1741895293}
   - {fileID: 1337658925}
@@ -12360,6 +12318,7 @@ Transform:
   - {fileID: 1111737958}
   - {fileID: 60291326}
   - {fileID: 1404112398}
+  - {fileID: 1799871120}
   m_Father: {fileID: 1546073961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12752,11 +12711,6 @@ PrefabInstance:
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
@@ -13106,11 +13060,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.6770421
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8363294540897377861, guid: 2d09812c06f67b94bbe39f4fe03f47e4,
         type: 3}
@@ -13662,6 +13611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 10
+  motorSound: {fileID: 0}
   gemsAmountField: {fileID: 0}
   otherCars: []
 --- !u!1001 &1452674822
@@ -14236,12 +14186,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6f26c5acd8abb264aacf312366399e5d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3d2fcc559f8cff146868ec4cdefca8bc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -15041,11 +14991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.6792125
-      objectReference: {fileID: 0}
-    - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
         type: 3}
@@ -16372,6 +16317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.2
   rotationSpeed: 80
+  motorSound: {fileID: 1529574517}
   gemsAmountField: {fileID: 1626591216}
   otherCars:
   - {fileID: 397861}
@@ -16512,7 +16458,7 @@ Transform:
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1294949781}
-  m_RootOrder: 26
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 171.85, y: -164.027, z: -116.34799}
 --- !u!108 &1799871121
 Light:
@@ -18904,11 +18850,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.48938248
-      objectReference: {fileID: 0}
-    - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 3515159204703648964, guid: 289cc26611b868b43a92579c41313734,
         type: 3}

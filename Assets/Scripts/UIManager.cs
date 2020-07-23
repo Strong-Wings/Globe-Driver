@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [HideInInspector]
-    public bool sound = true;
+    public static bool sound = true;
     [HideInInspector]
     public static bool pause = false;
     public float menuBarSpeed = 500f;
@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerController.StartGame = false;
         textField = gemsAmountField.GetComponent<UnityEngine.UI.Text>();
         Globe.GetComponent<CrystalSpawner>().enabled = false;
        // Globe.GetComponent<MeteorSpawner>().enabled = false;
@@ -53,10 +54,6 @@ public class UIManager : MonoBehaviour
         Globe.GetComponent<CrystalSpawner>().enabled = true;
         //Globe.GetComponent<MeteorSpawner>().enabled = true;
         PlayerController.StartGame = true;
-    }
-    private void Update()
-    {
-        Debug.Log(sound);
     }
     public void SoundTurn()
     {
