@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerController.StartGame = false;
         textField = gemsAmountField.GetComponent<UnityEngine.UI.Text>();
         Globe.GetComponent<CrystalSpawner>().enabled = false;
        // Globe.GetComponent<MeteorSpawner>().enabled = false;
