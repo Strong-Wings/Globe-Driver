@@ -7,6 +7,7 @@ public class ChecksMover : MonoBehaviour
 {
 
     public Transform Puzzle;
+    public static int cnt = 0;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class ChecksMover : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            ++cnt;
             StartCoroutine(MoveCoroutine());
             this.transform.localScale *= 0;
         }
