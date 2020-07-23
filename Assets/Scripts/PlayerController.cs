@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 10f;
     public static int gemAmount;
     private float rotation;
+    public AudioSource motorSound;
     public GameObject gemsAmountField;
     public GameObject[] otherCars;
     public static UnityEngine.UI.Text textField;
@@ -54,14 +55,17 @@ public class PlayerController : MonoBehaviour
     {
         if (StartGame && !UIManager.pause)
         {
+            if(UIManager.sound)
+                motorSound.mute = false;
             if (Input.GetKey(KeyCode.Space)) //ЗАКОММЕНТИТЬ ПРИ БИЛДЕ
                 _rb.MovePosition(_rb.position + transform.forward * moveSpeed * Time.fixedDeltaTime); //УБРАТЬ ОТСТУП ПРИ БИЛДЕ
             Vector3 yRotation = Vector3.up * rotation * rotationSpeed * Time.fixedDeltaTime;
             Quaternion deltaRotation = Quaternion.Euler(yRotation);
             Quaternion targetRotation = _rb.rotation * deltaRotation;
             _rb.MoveRotation(Quaternion.Slerp(_rb.rotation, targetRotation, 50f * Time.deltaTime));
-            
         }
+        else
+            motorSound.mute = true;
     }
     
     private void setCurCar() {
