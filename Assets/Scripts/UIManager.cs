@@ -54,9 +54,18 @@ public class UIManager : MonoBehaviour
         //Globe.GetComponent<MeteorSpawner>().enabled = true;
         PlayerController.StartGame = true;
     }
+    private void Update()
+    {
+        Debug.Log(sound);
+    }
     public void SoundTurn()
     {
         sound = !sound;
+        Transform sounds = GameObject.Find("Sounds").transform;
+        for(int i = 0; i < sounds.childCount; i++)
+        {
+            sounds.GetChild(i).GetComponent<AudioSource>().mute = !sound;
+        }
         transform.Find("SoundOn").gameObject.SetActive(sound);
         transform.Find("SoundOff").gameObject.SetActive(!sound);
     }
